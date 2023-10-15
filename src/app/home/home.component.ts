@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { TodoFormComponent } from './ui/todo-form.component';
 import { TodoService } from '../shared/data-access/todo.service';
-import { RouterLink } from '@angular/router';
+import { TodoListComponent } from './ui/todo-list.component';
 
 @Component({
   standalone: true,
@@ -9,16 +9,9 @@ import { RouterLink } from '@angular/router';
   template: `
     <h1>Todo</h1>
     <app-todo-form (todoSubmitted)="todoService.addTodo($event)" />
-
-    <ul>
-      @for (todo of todoService.todos(); track todo.id){
-      <li>
-        <a routerLink="/detail/{{ todo.id }}">{{ todo.title }}</a>
-      </li>
-      }
-    </ul>
+    <app-todo-list [todos]="todoService.todos()" />
   `,
-  imports: [TodoFormComponent, RouterLink],
+  imports: [TodoFormComponent, TodoListComponent],
 })
 export default class HomeComponent {
   todoService = inject(TodoService);
