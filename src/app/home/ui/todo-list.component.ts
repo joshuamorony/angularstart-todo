@@ -11,6 +11,8 @@ import { Todo } from '../../shared/interfaces/todo';
       <li>
         <a routerLink="/detail/{{ todo.id }}">{{ todo.title }}</a>
       </li>
+      } @empty {
+      <p>Nothing to do!</p>
       }
     </ul>
   `,
