@@ -12,11 +12,19 @@ import { Todo } from '../../shared/interfaces/todo';
         <a routerLink="/detail/{{ todo.id }}">{{ todo.title }}</a>
       </li>
       } @empty {
-      <p>Nothing to do!</p>
+      <li>Nothing to do!</li>
       }
     </ul>
   `,
   imports: [RouterLink],
+  styles: [
+    `
+      ul {
+        margin: 0;
+        padding: 1rem;
+      }
+    `,
+  ],
 })
 export class TodoListComponent {
   @Input({ required: true }) todos!: Todo[];

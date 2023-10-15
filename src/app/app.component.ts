@@ -7,7 +7,6 @@ import { RouterOutlet } from '@angular/router';
   standalone: true,
   imports: [CommonModule, RouterOutlet],
   template: ` <router-outlet></router-outlet> `,
-  styles: [],
 })
 export class AppComponent {
   title = 'angularstart-todo';
