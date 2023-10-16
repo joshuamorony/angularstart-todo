@@ -16,7 +16,7 @@ import { CreateTodo } from '../../shared/interfaces/todo';
         formControlName="description"
         placeholder="description..."
       />
-      <button type="submit">Add todo</button>
+      <button [disabled]="!todoForm.valid" type="submit">Add todo</button>
     </form>
   `,
   imports: [ReactiveFormsModule],
