@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Todo } from '../../shared/interfaces/todo';
 
@@ -7,12 +7,12 @@ import { Todo } from '../../shared/interfaces/todo';
   selector: 'app-todo-list',
   template: `
     <ul>
-      @for (todo of todos; track todo.id){
-      <li>
-        <a routerLink="/detail/{{ todo.id }}">{{ todo.title }}</a>
-      </li>
+      @for (todo of todos(); track todo.id) {
+        <li>
+          <a routerLink="/detail/{{ todo.id }}">{{ todo.title }}</a>
+        </li>
       } @empty {
-      <li>Nothing to do!</li>
+        <li>Nothing to do!</li>
       }
     </ul>
   `,
@@ -27,5 +27,5 @@ import { Todo } from '../../shared/interfaces/todo';
   ],
 })
 export class TodoListComponent {
-  @Input({ required: true }) todos!: Todo[];
+  todos = input.required<Todo[]>();
 }
