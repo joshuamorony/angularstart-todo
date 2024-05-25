@@ -7,11 +7,11 @@ import { TodoService } from '../shared/data-access/todo.service';
   standalone: true,
   selector: 'app-detail',
   template: `
-    @if (todo(); as todo){
-    <h2>{{ todo.title }}</h2>
-    <p>{{ todo.description }}</p>
+    @if (todo(); as todo) {
+      <h2>{{ todo.title }}</h2>
+      <p>{{ todo.description }}</p>
     } @else {
-    <p>Could not find todo...</p>
+      <p>Could not find todo...</p>
     }
   `,
 })
@@ -24,6 +24,6 @@ export default class DetailComponent {
   todo = computed(() =>
     this.todoService
       .todos()
-      .find((todo) => todo.id === this.paramMap()?.get('id'))
+      .find((todo) => todo.id === this.paramMap()?.get('id')),
   );
 }
