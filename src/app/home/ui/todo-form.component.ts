@@ -3,7 +3,6 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CreateTodo } from '../../shared/interfaces/todo';
 
 @Component({
-  standalone: true,
   selector: 'app-todo-form',
   template: `
     <form

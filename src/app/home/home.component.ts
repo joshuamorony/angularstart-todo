@@ -4,7 +4,6 @@ import { TodoService } from '../shared/data-access/todo.service';
 import { TodoListComponent } from './ui/todo-list.component';
 
 @Component({
-  standalone: true,
   selector: 'app-home',
   template: `
     <h1>Todo</h1>

@@ -4,7 +4,6 @@ import { ActivatedRoute } from '@angular/router';
 import { TodoService } from '../shared/data-access/todo.service';
 
 @Component({
-  standalone: true,
   selector: 'app-detail',
   template: `
     @if (todo(); as todo) {
